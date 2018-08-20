@@ -1,10 +1,8 @@
 function loadFriends() {
-    console.log(getUserNameById()); //выводит undefined !!!!!!!!!!!!!!!!!!!!!!
 
-    $('.detail').hide(); //приходится каждый раз прятать
+    $('.detail').hide();
 
     sendRequest('friends.search', { count: 300, fields: 'photo_100, online' }, function (data) {
-        //console.log(data.response);
         drawFriends(data.response.items);
     });
     
@@ -17,10 +15,8 @@ function drawFriends(friends) {
         var f = friends[i];
         var online = f.online ? 'Online' : 'Offline';
 
-        //if(!f.id) console.log('user_id undefined: ' + f.id);
         html +=
             '<li>'
-            //+ '<a target="_blank" href="https://vk.com/id' + f.id + '">'
             + '<a href="#">'
             + '<img src="' + f.photo_100 + '" />'
             + '<div>'
@@ -57,4 +53,18 @@ function drawDetailFriend(data) {
     $detail.find('ul').html(ulHtml);
     $detail.find('button').attr('data-id', user.id);
     $detail.show(400);
+}
+
+function sendMessage(event) {
+    var id = +$(event.target).attr('data-id');
+    var value = $('textarea').val();
+
+    if (!value) {
+        alert('Empty message!');
+        return;
+    }
+
+    sendRequest('messages.send', { user_id: id, message: value }, function () {
+        console.log('Sended');
+    });
 }

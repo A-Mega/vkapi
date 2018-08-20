@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>VK API</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../fixtures/vk.js"></script>
+    <script src="../fixtures/utils.js"></script>
+    <script src="../components/friends.js"></script>
+    <script src="../components/dialogs.js"></script>
+    <script src="../components/hystory.js"></script>
+    <script src="../components/feed.js"></script>
+    
+</head>
+
+<body>
+    <button id="load">Friends</button>
+    <button id="get-dialogs">Dialogs</button>
+    <button id="newsfeed">Newsfeed</button>
+
+    <div class="wrapper">
+        <ul id="list"></ul>
+        <div class="detail" style="display: none;">
+            <img src="">
+            <h3></h3>
+            <ul>
+
+            </ul>
+            <textarea></textarea>
+            <button id="send-message">Send message</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

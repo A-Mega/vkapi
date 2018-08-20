@@ -37,25 +37,6 @@ li {
     height: 200px;
 }
 
-.detail h3 {
-    
-}
-
 textarea {
     margin-bottom: 15px;
 }
-
-/*Zoom jpeg start*/
-/* td {
-	position: relative;
-}
-.clone {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.clone > img {
-	width: 100%;
-	height: 100%;
-} */
-/*Zoom jpeg end*/
